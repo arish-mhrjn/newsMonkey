@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component } from 'react';
 
 export default class NavBar extends Component {
   render() {
@@ -8,15 +8,7 @@ export default class NavBar extends Component {
           <a className="navbar-brand" href="/">
             NewsMonkey
           </a>
-          <button
-            className="navbar-toggler"
-            type="button"
-            data-toggle="collapse"
-            data-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
+          <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span className="navbar-toggler-icon"></span>
           </button>
 
@@ -32,18 +24,45 @@ export default class NavBar extends Component {
                   About
                 </a>
               </li>
+              <li className="nav-item">
+                <a className="nav-link" href="/business">
+                  Business
+                </a>{' '}
+              </li>
+              <li className="nav-item">
+                <a className="nav-link" href="/entertainment">
+                  Entertainment
+                </a>{' '}
+              </li>
+              <li className="nav-item">
+                <a className="nav-link" href="/general">
+                  General
+                </a>{' '}
+              </li>
+              <li className="nav-item">
+                <a className="nav-link" href="/health">
+                  Health
+                </a>
+              </li>
+              <li className="nav-item">
+                <a className="nav-link" href="/science">
+                  Science
+                </a>
+              </li>
+              <li className="nav-item">
+                <a className="nav-link" href="/sports">
+                  Sports
+                </a>
+              </li>
+              <li className="nav-item">
+                <a className="nav-link" href="/technology">
+                  Technology
+                </a>
+              </li>
             </ul>
             <form className="form-inline my-2 my-lg-0">
-              <input
-                className="form-control mr-sm-2"
-                type="search"
-                placeholder="Search"
-                aria-label="Search"
-              />
-              <button
-                className="btn btn-outline-success my-2 my-sm-0"
-                type="submit"
-              >
+              <input className="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" />
+              <button className="btn btn-outline-success my-2 my-sm-0" type="submit">
                 Search
               </button>
             </form>
