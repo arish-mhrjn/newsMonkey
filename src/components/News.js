@@ -64,7 +64,7 @@ export class News extends Component {
   }
 
   async componentDidMount() {
-    const url = `https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apiKey=322251ffb4284c9ea65cc27965d8dd79&page=${this.props.page}&pageSize=${this.props.pageSize}`;
+    const url = `https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apiKey=196258b7fa5540e3ba50447877046b6b&page=${this.props.page}&pageSize=${this.props.pageSize}`;
     this.setState({ loading: true });
     let data = await fetch(url);
     let parsedData = await data.json();
@@ -77,7 +77,7 @@ export class News extends Component {
   }
 
   updateNews = async () => {
-    const url = `https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apiKey=322251ffb4284c9ea65cc27965d8dd79&page=${this.props.page}&pageSize=${this.props.pageSize}`;
+    const url = `https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apiKey=322251ffb4284c9ea65cc27965d8dd79&page=${this.state.page}&pageSize=${this.props.pageSize}`;
     this.setState({ loading: true });
     let data = await fetch(url);
     let parsedData = await data.json();
@@ -129,19 +129,23 @@ export class News extends Component {
             <InfiniteScroll
               dataLength={this.state.articles.length}
               next={this.fetchMoreData}
-              hasMore={this.state.articles.length != this.state.totalResults}
+              hasMore={this.state.articles.length !== this.state.totalResults}
               loader={<Spinner />}>
               <div className="row my-5">
                 {this.state.articles.map((element, index) => {
                   return (
                     <div className="col-md-4" key={`${element.url}-${index}`}>
                       <NewsItem
-                        title={element.title}
-                        description={element.description}
-                        imageUrl={element.urlToImage}
-                        newsUrl={element.url}
-                        author={element.author}
-                        date={element.publishedAt}
+                        title={element?.title ? element.title : 'Title unknown'}
+                        description={
+                          element?.description
+                            ? element.description
+                            : 'Description not available'
+                        }
+                        imageUrl={element?.urlToImage}
+                        newsUrl={element?.url}
+                        author={element?.author}
+                        date={element?.publishedAt}
                         source={element.source.name}
                       />
                     </div>

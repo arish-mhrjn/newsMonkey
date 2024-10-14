@@ -8,7 +8,7 @@ export class NewsItem extends Component {
       <div className="my-3">
         <div className="card">
           <span
-            class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"
+            className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"
             style={{ fontSize: '100%', top: '-1rem', right: '0%' }}>
             {source}
           </span>
